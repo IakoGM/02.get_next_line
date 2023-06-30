@@ -1,3 +1,0 @@
-Este es un archivo random,
-para comprobar que get_next_line
-funciona correctamente.
