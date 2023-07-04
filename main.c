@@ -19,9 +19,13 @@ int	main(void)
 	{
 		printer = get_next_line(fd);
 		if (printer == NULL)
+		{
+			free(printer);
 			break ;
+		}
 		counter++;
 		printf("%d : %s\n", counter, printer);
+		free(printer);
 	}
 	close(fd);
 	return (0);
