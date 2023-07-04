@@ -7,7 +7,8 @@ int	main(void)
     char    *printer;
 
     counter = 0;
-	fd = open("files/nl", O_RDONLY);
+	printer = "";
+	fd = open("files/41_no_nl", O_RDONLY);
 	if (fd == -1)
 	{
 		printf("No se ha podido abrir el archivo.\n");
@@ -17,8 +18,10 @@ int	main(void)
 	while (printer != NULL)
 	{
 		printer = get_next_line(fd);
+		if (printer == NULL)
+			break ;
 		counter++;
-		printf("\e[36m%d : [\e[0m%s\e[36m]\e[0m\n", counter, printer);
+		printf("%d : %s\n", counter, printer);
 	}
 	close(fd);
 	return (0);

@@ -6,7 +6,7 @@
 /*   By: jakgonza <jakgonza@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/22 12:24:52 by jakgonza          #+#    #+#             */
-/*   Updated: 2023/06/30 12:19:22 by jakgonza         ###   ########.fr       */
+/*   Updated: 2023/07/04 12:15:59 by jakgonza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -107,13 +107,10 @@ char	*ft_store(char *store)
 
 	i = 0;
 	j = 0;
-	// recorro hasta \n o final
 	while (store[i] != '\n' && store[i] != '\0')
 		i++;
 	if (store[i] == '\0')
 	{
-		// si es final no hay necesidad de guardar
-		// porque lo que hay deberia de estar en send
 		free(store);
 		return (NULL);
 	}
@@ -124,9 +121,7 @@ char	*ft_store(char *store)
 		return (NULL);
 	while (store[i])
 	{
-		tmp[j] = store[i];
-		i++;
-		j++;
+		tmp[j++] = store[i++];
 	}
 	tmp[j] = '\0';
 	free(store);
