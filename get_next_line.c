@@ -6,7 +6,7 @@
 /*   By: jakgonza <jakgonza@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/22 12:16:34 by jakgonza          #+#    #+#             */
-/*   Updated: 2023/07/06 10:40:23 by jakgonza         ###   ########.fr       */
+/*   Updated: 2023/07/06 13:11:18 by jakgonza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,8 @@ char	*get_next_line(int fd)
 	if (!store)
 	{
 		store = (char *)malloc((BUFFER_SIZE + 1) * sizeof(char));
+		if (!store)
+			return (NULL);
 		store[0] = '\0';
 	}
 	store = ft_read(fd, store);
